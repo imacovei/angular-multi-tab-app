@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>AngularMultiTabApp</title>
+  <title>Angular Multi Tab App</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <header class="navbar navbar-inner navbar-fixed-top">
+    <nav class="container">
+        <div class="navbar-header">Angular Multi Tab Sample Project</div>
+    </nav>
+</header>
+<main class="container">
+  <app-root>
+      <div style="height: 100vh; width: 100vh; position: relative; ">
+          <p style="position: absolute; top: 20%; transform: translateY(-50%); font-size:30px; color: #0072B4; text-align: center;">
+          Just a moment.<br/>I'm gettings things ready for you...
+          </p>
+      </div>
+  </app-root>
+</main>
+  
 </body>
 </html>

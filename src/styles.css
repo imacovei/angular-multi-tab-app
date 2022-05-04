@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+main {
+    position: relative;
+    padding-top: 60px;
+}
+
+/* set the last tab to the right */
+tabset ul li:last-child {
+    position: absolute;
+    right: 20px;
+}
+
+.line-breaker {
+    white-space: pre-line;
+}
+
+.tooltip > .tooltip-inner > table > thead > tr > th, .tooltip > .tooltip-inner > table > tbody > tr > td
+{
+    background-color: #00497b; 
+}
+
+.tooltip > .tooltip-inner > div
+{
+    font-size: 10pt;
+    font-weight: 700;
+}
+
+.tooltip > .tooltip-inner
+{
+    background-color: #00497b; 
+    color: #FFFFFF; 
+    border: 2px solid #FFFFFF; 
+    padding: 15px;
+    text-align: left;
+    max-width: 350px;
+    width: 350px;
+}
+
+.alert-invalid
+{
+    text-align: left;
+    color: #D8462E;
+    font-size: 8pt;
+    font-weight: 700;
+}

@@ -1,0 +1,79 @@
+<div class="form-group row">
+    <div class="col-md-3 bomgen-input">
+        <form [formGroup]="breweriesInputForm">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Filter</div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <input autofocus type="text" class="form-control" formControlName="location"
+                            placeholder="Location (city, state or country)" (keyup.enter)="getBreweries()">
+                        <span class="input-group-text" (click)="getBreweries()">
+                            <fa-icon [icon]="searchSymbol"></fa-icon>
+                        </span>
+                    </div>
+                    <div *ngIf="!location?.valid" class="alert-invalid">&#65281; If you provide a filter, then it must be at least {{filterMinLength}} characters long.</div>
+                </div>
+            </div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">Type</div>
+                <div class="panel-body">
+                        <div class="radio">
+                            <label><input type="radio" formControlName="filterType" value="city"> City
+                                <app-info-tooltip>The value of the filter will be applied to the city of the brewery.</app-info-tooltip>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" formControlName="filterType" value="state"> State
+                                <app-info-tooltip>The value of the filter will be applied to the state of the brewery.</app-info-tooltip>
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" formControlName="filterType" value="country"> Country
+                                <app-info-tooltip>The value of the filter will be applied to the country of the brewery.</app-info-tooltip>
+                            </label>
+                        </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-9 bomgen-results" *ngIf="breweriesData">
+        <!-- <pre>form value: <br>{{mtInputForm.value | json}}</pre> -->
+        <!-- <pre>form value: <br>{{breweriesData | json}}</pre> -->
+        <i *ngIf="loading == true" class="fa fa-spinner fa-spin" style="font-size:48px;"></i>
+        <div *ngIf="breweriesData && loading == false">
+            <table class="table table-hover table-bordered table-condensed table-responsive">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>State</th>
+                        <th>City</th>
+                        <th>PO</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let brewery of breweriesData">
+                        <td>
+                            <span>{{ brewery?.name }}</span>
+                            <app-info-tooltip *ngIf="brewery?.created_at" class="line-breaker">
+                                <span>
+                                    Phone: <span [innerHTML]="brewery?.phone! | nl2br"></span>
+                                    <hr>
+                                    Created at: <span [innerHTML]="brewery?.created_at! | nl2br"></span>
+                                    <hr>
+                                    Web site: <span [innerHTML]="brewery?.website_url! | nl2br"></span>
+                                </span>
+                            </app-info-tooltip>
+                        </td>
+                        <td><span>{{brewery?.country}}</span></td>
+                        <td><span>{{brewery?.state}}</span></td>
+                        <td><span>{{brewery?.city}}</span></td>
+                        <td><span>{{brewery?.postal_code}}</span></td>
+                        <td><span>{{brewery?.brewery_type}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

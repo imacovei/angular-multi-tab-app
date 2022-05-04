@@ -1,27 +1,42 @@
-# AngularMultiTabApp
+# A sample project to help starting with a multi tab angular app
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
+## Table of Contents
+- [A sample project to help starting with a multi tab angular app](#a-sample-project-to-help-starting-with-a-multi-tab-angular-app)
+  - [Table of Contents](#table-of-contents)
+- [Aim](#aim)
+- [Commands](#commands)
+- [Credits](#credits)
 
-## Development server
+# Aim
+This project aims to help getting started with a very simple tabbed app using the Material UI
+It provides some basic examples of
+- creating tabs
+- creating a simple input form
+- retrieving some free sample data using the HttpClient component
+- display the JSON data in a table
+- working with tooltips
+- validators of form fields
+- custom pipes
+- custom tooltips
+- usage of the HttpClint in the unit tests
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Commands
+- npm install -g @angular/cli
+- npm install bootstrap
+- npm install ngx-bootstrap-tabs --save
+- ng add @angular/cli
+- ng add @angular/material
+- ng add @fortawesome/angular-fontawesome
+- ng add ngx-bootstrap
+- ng add ngx-bootstrap --component tabs
+- ng generate component Breweries
+- ng generate component Numbers
+- ng generate component Info
+- ng generate component InfoTooltip
 
-## Code scaffolding
+# Credits
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+angular-multi-tab-app is created and maintained by Iulian Macovei
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+*I'm open to suggestions, feel free to open an issue.*
+*Pull requests are also welcome!*

@@ -1,0 +1,12 @@
+npm install -g @angular/cli
+npm install bootstrap
+npm install ngx-bootstrap-tabs --save
+np add @angular/cli
+ng add @angular/material
+ng add @fortawesome/angular-fontawesome
+ng add ngx-bootstrap
+ng add ngx-bootstrap --component tabs
+ng generate component Breweries
+ng generate component Numbers
+ng generate component Info
+ng generate component InfoTooltip
