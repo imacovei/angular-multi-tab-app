@@ -102,6 +102,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular-multi-tab-app"
+  }
 }

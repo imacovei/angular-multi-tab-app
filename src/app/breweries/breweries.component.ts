@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, Validators, UntypedFormBuilder } from '@angular/forms';
 import { faSearchLocation } from '@fortawesome/free-solid-svg-icons';
 import { firstValueFrom } from 'rxjs';
 
@@ -14,13 +14,13 @@ import { filterLengthValidator } from '../shared/validators';
 export class BreweriesComponent implements OnInit
 {
 
-  public breweriesInputForm: FormGroup;
+  public breweriesInputForm: UntypedFormGroup;
   public breweriesData!: Brewery[];
   public loading: boolean = false;
   public searchSymbol = faSearchLocation;
   public filterMinLength = 4;
 
-  constructor(private fb: FormBuilder, private dataService: DataService)
+  constructor(private fb: UntypedFormBuilder, private dataService: DataService)
   {
     this.breweriesInputForm = this.fb.group({
       location: ['', [filterLengthValidator(this.filterMinLength)]],
